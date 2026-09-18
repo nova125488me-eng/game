@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شهربازی امیرعلی</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      background-color: #17212b;
+      font-family: Tahoma, sans-serif;
+      padding: 12px;
+      margin: 0;
+      color: white;
+    }
+    
+    /* استایل دکمه‌های اصلی */
+    .btn {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 8px;
+      border: none;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* ردیف‌های تکی و دو‌تایی */
+    .row {
+      display: flex;
+      gap: 8px;
+    }
+    .row .btn {
+      flex: 1;
+    }
+
+    /* رنگ‌های دقیق مشابه تصویر */
+    .btn-green { background-color: #2ea24d; } /* دکمه اصلی بالا */
+    .btn-blue  { background-color: #244158; } /* دکمه‌های وسط */
+    .btn-red   { background-color: #9e3b3b; } /* دکمه‌های پایین */
+  </style>
+</head>
+<body>
+
+  <!-- دکمه تکی سبز بالای منو -->
+  <button class="btn btn-green" onclick="playGame('tap')">
+    🎰 بازی کلیکی (Tap Game)
+  </button>
+
+  <!-- ردیف اول: دو دکمه آبی -->
+  <div class="row">
+    <button class="btn btn-blue" onclick="playGame('quiz')">🧠 اطلاعات عمومی</button>
+    <button class="btn btn-blue" onclick="playGame('mafia')">🕵️ مافیا گروهی</button>
+  </div>
+
+  <!-- ردیف دوم: دو دکمه آبی -->
+  <div class="row">
+    <button class="btn btn-blue" onclick="playGame('rps')">⚔️ سنگ کاغذ قیچی</button>
+    <button class="btn btn-blue" onclick="playGame('words')">📝 حدس کلمات</button>
+  </div>
+
+  <!-- ردیف سوم: دو دکمه آبی -->
+  <div class="row">
+    <button class="btn btn-blue" onclick="playGame('pet')">🐶 حیوان خانگی</button>
+    <button class="btn btn-blue" onclick="playGame('profile')">👤 پروفایل من</button>
+  </div>
+
+  <!-- ردیف دکمه‌های قرمز پایین -->
+  <div class="row">
+    <button class="btn btn-red" onclick="playGame('ranks')">🏆 برترین‌ها</button>
+    <button class="btn btn-red" onclick="playGame('help')">📞 پشتیبانی</button>
+  </div>
+
+  <script>
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+
+    function playGame(gameName) {
+      alert("شما بازی " + gameName + " را انتخاب کردید!");
+      // در مرحله بعد لینک هر بازی را به این بخش وصل می‌کنیم
+    }
+  </script>
+</body>
+</html>
